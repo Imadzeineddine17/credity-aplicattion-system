@@ -1,2 +1,2 @@
 ﻿# credity-aplicattion-system
-TESTANDO api
+Curso criando api em kotlin.
