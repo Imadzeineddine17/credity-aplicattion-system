@@ -1,16 +1,16 @@
 package me.dio.creditapplicationsystem.repository
 
-import me.dio.creditapplicationsystem.entity.credit
+import me.dio.creditapplicationsystem.entity.Credit
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query
 import org.springframework.stereotype.Repository
 import java.util.UUID
 
 @Repository
-interface CreditRepository: JpaRepository<credit, Long>{
+interface CreditRepository: JpaRepository<Credit, Long>{
 
-    fun findByCreditCode(creditCode: UUID): credit?
+    fun findByCreditCode(creditCode: UUID): Credit?
     @Query(value = "SELECT * FROM credito WHERE CUSTOMER_ID = ?1", nativeQuery = true)
-    fun findAllByCustomerId(customerId: Long): List<credit>
+    fun findAllByCustomerId(customerId: Long): List<Credit>
 
 }

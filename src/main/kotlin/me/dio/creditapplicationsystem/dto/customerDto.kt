@@ -3,10 +3,9 @@ package me.dio.creditapplicationsystem.dto
 import jakarta.validation.constraints.Email
 import jakarta.validation.constraints.NotEmpty
 import jakarta.validation.constraints.NotNull
-import me.dio.creditapplicationsystem.entity.address
-import me.dio.creditapplicationsystem.entity.customer
+import me.dio.creditapplicationsystem.entity.Address
+import me.dio.creditapplicationsystem.entity.Customer
 import org.hibernate.validator.constraints.br.CPF
-import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails.Address
 import java.math.BigDecimal
 
 data class customerDto(
@@ -20,14 +19,14 @@ data class customerDto(
     @field: NotEmpty(message = "Dados Incorretos") val zipCode: String,
     @field: NotEmpty(message = "Dados Incorretos") val street: String
 ) {
-    fun toEntity(): customer = customer(
+    fun toEntity(): Customer = Customer(
         firstName = this.firstName,
         lastName = this.lastName,
         cpf = this.cpf,
         email = this.email,
         income = this.income,
         password = this.password,
-        address = address(
+        address = Address(
             zipCode = this.zipCode,
             street = this.street
         )

@@ -1,6 +1,6 @@
 package me.dio.creditapplicationsystem.service.impl
 
-import me.dio.creditapplicationsystem.entity.credit
+import me.dio.creditapplicationsystem.entity.Credit
 import me.dio.creditapplicationsystem.exception.BusinessException
 import me.dio.creditapplicationsystem.repository.CreditRepository
 import me.dio.creditapplicationsystem.service.ICreditService
@@ -13,17 +13,17 @@ class CreditService(
     private val customerService: CustomerService
 
 ) : ICreditService {
-    override fun save(credit: credit): credit {
+    override fun save(credit: Credit): Credit {
         credit.apply {
             customer = customerService.findById(credit.customer?.id!!)
         }
         return this.creditRepository.save(credit)
     }
 
-    override fun findAllByCustomer(customerID: Long): List<credit> = this.creditRepository.findAllByCustomerId(customerID)
+    override fun findAllByCustomer(customerID: Long): List<Credit> = this.creditRepository.findAllByCustomerId(customerID)
 
-    override fun findByCreditCode(customerID: Long, creditCode: UUID): credit {
-        val credit: credit = (this.creditRepository.findByCreditCode(creditCode)
+    override fun findByCreditCode(customerID: Long, creditCode: UUID): Credit {
+        val credit: Credit = (this.creditRepository.findByCreditCode(creditCode)
             ?: throw BusinessException("CreditCode $creditCode not found"))
         return if (credit.customer?.id == customerID) credit else throw IllegalArgumentException("Contact admin")
     }
