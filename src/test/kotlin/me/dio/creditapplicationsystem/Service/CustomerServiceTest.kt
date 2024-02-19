@@ -21,7 +21,7 @@ import java.util.*
 
 @ActiveProfiles("test")
 @ExtendWith(MockKExtension::class)
-class customerServiceTest {
+class CustomerServiceTest {
     @MockK lateinit var customerRepository: CustomerRepository
     @InjectMockKs lateinit var customerService: CustomerService
 
