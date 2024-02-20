@@ -21,10 +21,11 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers
 import java.math.BigDecimal
 import java.util.*
 
-@SpringBootTest
+
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
 @ContextConfiguration
+@SpringBootTest
 class CustomerResourceTest {
     @Autowired
     private lateinit var customerRepository: CustomerRepository
