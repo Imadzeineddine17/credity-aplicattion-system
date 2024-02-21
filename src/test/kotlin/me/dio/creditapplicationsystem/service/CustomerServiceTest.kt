@@ -1,5 +1,4 @@
-package me.dio.credit.application.system.service
-
+package me.dio.creditapplicationsystem.service
 import io.mockk.every
 import io.mockk.impl.annotations.InjectMockKs
 import io.mockk.impl.annotations.MockK
@@ -20,7 +19,7 @@ import java.util.*
 
 //@ActiveProfiles("test")
 @ExtendWith(MockKExtension::class)
-class CustomerRepositoryTest {
+class CustomerServiceTest {
     @MockK lateinit var customerRepository: CustomerRepository
     @InjectMockKs lateinit var customerService: CustomerService
 

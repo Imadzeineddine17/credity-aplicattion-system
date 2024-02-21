@@ -8,7 +8,7 @@ import me.dio.creditapplicationsystem.entity.Customer
 import org.hibernate.validator.constraints.br.CPF
 import java.math.BigDecimal
 
-data class customerDto(
+data class CustomerDto(
     @field: NotEmpty(message = "Dados Incorretos") val firstName: String,
     @field: NotEmpty(message = "Dados Incorretos") val lastName: String,
     @field: NotEmpty(message = "Dados Incorretos")

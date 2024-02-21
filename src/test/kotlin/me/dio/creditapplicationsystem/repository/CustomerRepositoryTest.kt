@@ -1,5 +1,4 @@
-package me.dio.credit.application.system.service
-
+package me.dio.creditapplicationsystem.repository
 import io.mockk.every
 import io.mockk.impl.annotations.InjectMockKs
 import io.mockk.impl.annotations.MockK
@@ -10,18 +9,16 @@ import io.mockk.verify
 import me.dio.creditapplicationsystem.entity.Address
 import me.dio.creditapplicationsystem.entity.Customer
 import me.dio.creditapplicationsystem.exception.BusinessException
-import me.dio.creditapplicationsystem.repository.CustomerRepository
 import me.dio.creditapplicationsystem.service.impl.CustomerService
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
-import org.springframework.test.context.ActiveProfiles
 import java.math.BigDecimal
 import java.util.*
 
-@ActiveProfiles("test")
+//@ActiveProfiles("test")
 @ExtendWith(MockKExtension::class)
-class CustomerServiceTest {
+class CustomerRepositoryTest {
     @MockK lateinit var customerRepository: CustomerRepository
     @InjectMockKs lateinit var customerService: CustomerService
 
