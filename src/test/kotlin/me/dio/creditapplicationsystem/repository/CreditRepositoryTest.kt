@@ -37,13 +37,13 @@ class CreditRepositoryTest {
     @Test
     fun `should find credit by credit code`() {
         //given
-        val creditcode1 = UUID.fromString("aa547c0f-9a6a-451f-8c89-afddce916a29")
-        val creditcode2 = UUID.fromString("49f740be-46a7-449b-84e7-ff5b7986d7ef")
-        credit1.creditCode = creditcode1
-        credit2.creditCode = creditcode2
+        val creditCode1 = UUID.fromString("aa547c0f-9a6a-451f-8c89-afddce916a29")
+        val creditCode2 = UUID.fromString("49f740be-46a7-449b-84e7-ff5b7986d7ef")
+        credit1.creditCode = creditCode1
+        credit2.creditCode = creditCode2
         //when
-        val fakeCredit1: Credit = creditRepository.findByCreditCode(creditcode1)!!
-        val fakeCredit2: Credit = creditRepository.findByCreditCode(creditcode2)!!
+        val fakeCredit1: Credit = creditRepository.findByCreditCode(creditCode1)!!
+        val fakeCredit2: Credit = creditRepository.findByCreditCode(creditCode2)!!
         //then
         Assertions.assertThat(fakeCredit1).isNotNull
         Assertions.assertThat(fakeCredit2).isNotNull

@@ -21,6 +21,7 @@ import java.math.BigDecimal
 import java.util.*
 
 @SpringBootTest
+
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
 @ContextConfiguration
@@ -82,7 +83,7 @@ class CustomerResourceTest {
                 .content(valueAsString)
         )
             .andExpect(MockMvcResultMatchers.status().isConflict)
-            .andExpect(MockMvcResultMatchers.jsonPath("$.title").value("Conflict! Consult the documentation"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.title").value("Conflict! consult the documentation"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.timestamp").exists())
             .andExpect(MockMvcResultMatchers.jsonPath("$.status").value(409))
             .andExpect(
@@ -106,7 +107,7 @@ class CustomerResourceTest {
                 .contentType(MediaType.APPLICATION_JSON)
         )
             .andExpect(MockMvcResultMatchers.status().isBadRequest)
-            .andExpect(MockMvcResultMatchers.jsonPath("$.title").value("Bad Request! Consult the documentation"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.title").value("Bad Request! consult the documentation"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.timestamp").exists())
             .andExpect(MockMvcResultMatchers.jsonPath("$.status").value(400))
             .andExpect(
@@ -135,7 +136,7 @@ class CustomerResourceTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$.income").value("1000.0"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.zipCode").value("000000"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.street").value("Rua da Cami, 123"))
-            //.andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1))
             .andDo(MockMvcResultHandlers.print())
     }
 
@@ -155,8 +156,7 @@ class CustomerResourceTest {
             .andExpect(MockMvcResultMatchers.jsonPath("$.status").value(400))
             .andExpect(
                 MockMvcResultMatchers.jsonPath("$.exception")
-                    .value("class me.dio.credit.application.system.exception.BusinessException")
-            )
+                    .value("class me.dio.creditapplicationsystem.exception.BusinessException")            )
             .andExpect(MockMvcResultMatchers.jsonPath("$.details[*]").isNotEmpty)
             .andDo(MockMvcResultHandlers.print())
     }
@@ -186,12 +186,12 @@ class CustomerResourceTest {
                 .accept(MediaType.APPLICATION_JSON)
         )
             .andExpect(MockMvcResultMatchers.status().isBadRequest)
-            .andExpect(MockMvcResultMatchers.jsonPath("$.title").value("Bad Request! Consult the documentation"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.title").value("Bad Request! consult the documentation"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.timestamp").exists())
             .andExpect(MockMvcResultMatchers.jsonPath("$.status").value(400))
             .andExpect(
                 MockMvcResultMatchers.jsonPath("$.exception")
-                    .value("class me.dio.credit.application.system.exception.BusinessException")
+                    .value("class me.dio.creditapplicationsystem.exception.BusinessException")
             )
             .andExpect(MockMvcResultMatchers.jsonPath("$.details[*]").isNotEmpty)
             .andDo(MockMvcResultHandlers.print())
@@ -236,7 +236,7 @@ class CustomerResourceTest {
                 .content(valueAsString)
         )
             .andExpect(MockMvcResultMatchers.status().isBadRequest)
-            .andExpect(MockMvcResultMatchers.jsonPath("$.title").value("Bad Request! Consult the documentation"))
+            .andExpect(MockMvcResultMatchers.jsonPath("$.title").value("Bad Request! consult the documentation"))
             .andExpect(MockMvcResultMatchers.jsonPath("$.timestamp").exists())
             .andExpect(MockMvcResultMatchers.jsonPath("$.status").value(400))
             .andExpect(

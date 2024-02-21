@@ -121,7 +121,7 @@ class CreditServiceTest {
         //then
         Assertions.assertThatThrownBy { creditService.findByCreditCode(customerId, invalidCreditCode) }
             .isInstanceOf(BusinessException::class.java)
-            .hasMessage("Creditcode $invalidCreditCode not found")
+            .hasMessage("CreditCode $invalidCreditCode not found")
         //then
         verify(exactly = 1) { creditRepository.findByCreditCode(invalidCreditCode) }
     }

@@ -14,10 +14,11 @@ import me.dio.creditapplicationsystem.service.impl.CustomerService
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
+import org.springframework.test.context.ActiveProfiles
 import java.math.BigDecimal
 import java.util.*
 
-//@ActiveProfiles("test")
+@ActiveProfiles("test")
 @ExtendWith(MockKExtension::class)
 class CustomerServiceTest {
     @MockK lateinit var customerRepository: CustomerRepository
