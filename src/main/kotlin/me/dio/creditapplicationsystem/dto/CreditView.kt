@@ -1,6 +1,6 @@
 package me.dio.creditapplicationsystem.dto
 
-import me.dio.creditapplicationsystem.ennumeration.Status
+import me.dio.creditapplicationsystem.enumeration.Status
 import me.dio.creditapplicationsystem.entity.Credit
 import java.math.BigDecimal
 import java.util.*

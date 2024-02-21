@@ -1,7 +1,7 @@
 package me.dio.creditapplicationsystem.entity
 
 import jakarta.persistence.*
-import me.dio.creditapplicationsystem.ennumeration.Status
+import me.dio.creditapplicationsystem.enumeration.Status
 import java.math.BigDecimal
 import java.time.LocalDate
 import java.util.*
