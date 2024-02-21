@@ -9,8 +9,8 @@ import java.util.*
 @Entity
 @Table(name = "credito")
 data class Credit(
-    @Column(nullable = false, unique = true) var creditCode : UUID = UUID.randomUUID(),
-    @Column(nullable = false) val creditValue : BigDecimal = BigDecimal.ZERO,
+    @Column(nullable = false, unique = true) var code : UUID = UUID.randomUUID(),
+    @Column(nullable = false) val value : BigDecimal = BigDecimal.ZERO,
     @Column(nullable = false) val dayFirstInstallament : LocalDate,
     @Column(nullable = false) val numberOfInstallaments : Int = 0,
     @Enumerated val status : Status = Status.IN_PROGRESS,

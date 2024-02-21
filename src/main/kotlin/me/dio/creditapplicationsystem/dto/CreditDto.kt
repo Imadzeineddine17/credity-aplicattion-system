@@ -14,7 +14,7 @@ data class CreditDto(
     @field: NotNull(message = "Dados Incorretos") val customerId: Long
 ) {
     fun toEntity(): Credit = Credit(
-        creditValue = this.creditValue,
+        value = this.creditValue,
         dayFirstInstallament = this.dayFirstOfInstallament,
         numberOfInstallaments = this.numberOfInstallaments,
         customer = Customer(id = this.customerId)

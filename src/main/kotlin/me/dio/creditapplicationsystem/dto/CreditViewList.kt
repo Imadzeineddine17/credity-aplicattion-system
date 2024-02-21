@@ -11,8 +11,8 @@ data class CreditViewList(
 
 ) {
     constructor(credit: Credit): this(
-        creditCode = credit.creditCode,
-        creditValue = credit.creditValue,
+        creditCode = credit.code,
+        creditValue = credit.value,
         numberOfInstallaments = credit.numberOfInstallaments
     )
 

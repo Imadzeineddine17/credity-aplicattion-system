@@ -1,4 +1,4 @@
-package me.dio.credit.application.system.service
+package me.dio.creditapplicationsystem.service
 
 import io.mockk.every
 import io.mockk.impl.annotations.InjectMockKs

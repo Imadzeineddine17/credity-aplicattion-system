@@ -1,4 +1,4 @@
-package me.dio.creditapplicationsystem.Service
+package me.dio.creditapplicationsystem.service
 
 import io.mockk.MockKAnnotations
 import io.mockk.every
@@ -7,7 +7,6 @@ import io.mockk.impl.annotations.MockK
 import io.mockk.junit5.MockKExtension
 import io.mockk.unmockkAll
 import io.mockk.verify
-import me.dio.credit.application.system.service.CustomerServiceTest
 import me.dio.creditapplicationsystem.entity.Credit
 import me.dio.creditapplicationsystem.entity.Customer
 import me.dio.creditapplicationsystem.exception.BusinessException
@@ -150,9 +149,9 @@ class CreditServiceTest {
             creditValue: BigDecimal = BigDecimal.valueOf(100.0),
             dayFirstInstallment: LocalDate = LocalDate.now().plusMonths(2L),
             numberOfInstallments: Int = 15,
-            customer: Customer = CustomerServiceTest.buildCustomer()
+            customer: Customer = Customer()// CustomerServiceTest.buildCustomer()
         ): Credit = Credit(
-            creditValue = creditValue,
+            value = creditValue,
             dayFirstInstallament = dayFirstInstallment,
             numberOfInstallaments = numberOfInstallments,
             customer = customer

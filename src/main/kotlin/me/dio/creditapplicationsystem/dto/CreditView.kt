@@ -14,8 +14,8 @@ data class CreditView(
     val incomeCustomer: BigDecimal?
 ) {
     constructor(credit: Credit): this(
-        creditCode = credit.creditCode,
-        creditValue = credit.creditValue,
+        creditCode = credit.code,
+        creditValue = credit.value,
         numberOfInstallaments = credit.numberOfInstallaments,
         status = credit.status,
         emailCustomer = credit.customer?.email,
