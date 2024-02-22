@@ -66,7 +66,7 @@ class CreditServiceTest {
         //given
         val invalidDayFirstInstallment: LocalDate = LocalDate.now().plusMonths(5)
         val credit: Credit = buildCredit(dayFirstInstallment = invalidDayFirstInstallment)
-
+        every { customerService.findById(credit.customer!!.id!!) } returns credit.customer!!
         every { creditRepository.save(credit) } answers { credit }
         //when
         Assertions.assertThatThrownBy { creditService.save(credit) }
@@ -121,7 +121,7 @@ class CreditServiceTest {
         //then
         Assertions.assertThatThrownBy { creditService.findByCreditCode(customerId, invalidCreditCode) }
             .isInstanceOf(BusinessException::class.java)
-            .hasMessage("CreditCode $invalidCreditCode not found")
+            .hasMessage("Creditcode $invalidCreditCode not found")
         //then
         verify(exactly = 1) { creditRepository.findByCreditCode(invalidCreditCode) }
     }
